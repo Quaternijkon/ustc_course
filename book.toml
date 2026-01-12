@@ -10,3 +10,6 @@ edit-url-template =  "https://github.com/Quaternijkon/ustc_course/edit/main/{pat
 [output.html.fold]
 enable = true
 level = 0
+
+[preprocessor.katex]
+after = ["links"]

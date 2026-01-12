@@ -1,8 +1,8 @@
 # Summary
 
 
-[Introduction](Introduction.md)
-[README](../README.md)
+
+[README](./README.md)
 
 # 研究生课程
 
