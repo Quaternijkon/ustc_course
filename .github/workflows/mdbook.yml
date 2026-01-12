@@ -20,64 +20,81 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Install mdbook and dependencies
         run: |
+          mkdir mdbook
+
+          # ==========================================
+          # 1. mdbook 核心 (必须保留)
+          # ==========================================
           tag="v0.4.36"
           url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
-
-          tag1="0.9.3"
-          url1="https://github.com/lzanini/mdbook-katex/releases/download/${tag1}-binaries/mdbook-katex-v${tag1}-x86_64-unknown-linux-gnu.tar.gz"
-
-          tag2="v1.19.0"
-          url2="https://github.com/tommilligan/mdbook-admonish/releases/download/${tag2}/mdbook-admonish-${tag2}-x86_64-unknown-linux-gnu.tar.gz"
-
-          url3="https://github.com/Quaternijkon/mdbook-reading-time/releases/download/1.1.2/mdbook-reading-time-x86_64-unknown-linux-gnu.tar.gz"
-
-          tag4="v0.7.0"
-          url4="https://github.com/lambdalisue/rs-mdbook-alerts/releases/download/${tag4}/mdbook-alerts-x86_64-unknown-linux-gnu"
-
-          tag5="0.2.6"
-          url5="https://github.com/MR-Addict/mdbook-repl/releases/download/${tag5}/mdbook-repl-${tag5}-x86_64-unknown-linux-gnu.zip"
-
-
-          tag6="v0.14.1"
-          url6="https://github.com/badboy/mdbook-mermaid/releases/download/${tag6}/mdbook-mermaid-${tag6}-x86_64-unknown-linux-gnu.tar.gz"
-
-          tag7="0.2.11"
-          url7="https://github.com/MR-Addict/mdbook-embedify/releases/download/${tag7}/mdbook-embedify-${tag7}-x86_64-unknown-linux-gnu.zip"
-
-          url8="https://github.com/Quaternijkon/mdbook-suiji/releases/download/0.1.1/mdbook-suiji-x86_64-unknown-linux-gnu.tar.gz"
-
-          mkdir mdbook
           curl -sSL $url | tar -xz --directory=./mdbook
-          curl -sSL $url1 | tar -xz --directory=./mdbook
-          curl -sSL $url2 | tar -xz --directory=./mdbook
-          curl -sSL $url3 | tar -xz --directory=./mdbook
-          wget -q $url4 -O mdbook/mdbook-alerts
-          curl -sSL "$url5" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
-          curl -sSL $url6 | tar -xz --directory=./mdbook
-          curl -sSL "$url7" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
-          curl -sSL $url8 | tar -xz --directory=./mdbook
 
-          chmod a+x mdbook/mdbook-alerts
-          mv ./mdbook/mdbook-repl-*/mdbook-repl ./mdbook/mdbook-repl
-          mv ./mdbook/mdbook-embedify-*/mdbook-embedify ./mdbook/mdbook-embedify
+          # ==========================================
+          # 2. 插件列表 (根据 book.toml 按需解开注释)
+          # ==========================================
 
+          # [preprocessor.katex]
+          # tag1="0.9.3"
+          # url1="https://github.com/lzanini/mdbook-katex/releases/download/${tag1}-binaries/mdbook-katex-v${tag1}-x86_64-unknown-linux-gnu.tar.gz"
+          # curl -sSL $url1 | tar -xz --directory=./mdbook
+
+          # [preprocessor.admonish]
+          # tag2="v1.19.0"
+          # url2="https://github.com/tommilligan/mdbook-admonish/releases/download/${tag2}/mdbook-admonish-${tag2}-x86_64-unknown-linux-gnu.tar.gz"
+          # curl -sSL $url2 | tar -xz --directory=./mdbook
+
+          # mdbook-reading-time
+          # url3="https://github.com/Quaternijkon/mdbook-reading-time/releases/download/1.1.2/mdbook-reading-time-x86_64-unknown-linux-gnu.tar.gz"
+          # curl -sSL $url3 | tar -xz --directory=./mdbook
+
+          # mdbook-alerts (旧版)
+          # tag4="v0.7.0"
+          # url4="https://github.com/lambdalisue/rs-mdbook-alerts/releases/download/${tag4}/mdbook-alerts-x86_64-unknown-linux-gnu"
+          # wget -q $url4 -O mdbook/mdbook-alerts
+          # chmod a+x mdbook/mdbook-alerts
+
+          # mdbook-repl
+          # tag5="0.2.6"
+          # url5="https://github.com/MR-Addict/mdbook-repl/releases/download/${tag5}/mdbook-repl-${tag5}-x86_64-unknown-linux-gnu.zip"
+          # curl -sSL "$url5" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
+          # mv ./mdbook/mdbook-repl-*/mdbook-repl ./mdbook/mdbook-repl
+
+          # [preprocessor.mermaid]
+          # tag6="v0.14.1"
+          # url6="https://github.com/badboy/mdbook-mermaid/releases/download/${tag6}/mdbook-mermaid-${tag6}-x86_64-unknown-linux-gnu.tar.gz"
+          # curl -sSL $url6 | tar -xz --directory=./mdbook
+
+          # mdbook-embedify
+          # tag7="0.2.11"
+          # url7="https://github.com/MR-Addict/mdbook-embedify/releases/download/${tag7}/mdbook-embedify-${tag7}-x86_64-unknown-linux-gnu.zip"
+          # curl -sSL "$url7" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
+          # mv ./mdbook/mdbook-embedify-*/mdbook-embedify ./mdbook/mdbook-embedify
+
+          # mdbook-suiji
+          # url8="https://github.com/Quaternijkon/mdbook-suiji/releases/download/0.1.1/mdbook-suiji-x86_64-unknown-linux-gnu.tar.gz"
+          # curl -sSL $url8 | tar -xz --directory=./mdbook
+
+          # ==========================================
+          # 3. 环境配置
+          # ==========================================
           ls ./mdbook
-
           echo `pwd`/mdbook >> $GITHUB_PATH
-    #   - name: Install Dependencies
-    #     run: |
-    #       cargo install mdbook-reading-time
+
       - name: Build Book
         run: |
           mdbook build
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'book'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
