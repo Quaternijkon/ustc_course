@@ -4,8 +4,6 @@ authors = ["Quaternijkon"]
 language = "zh-CN"
 
 [output.html]
-# additional-css = ["theme/style.css", "./mdbook-admonish.css"]
-# additional-js = ["assets/custom.js", "assets/bigPicture.js", "mermaid.min.js", "mermaid-init.js"]
 git-repository-url = "https://github.com/Quaternijkon/ustc_course"
 edit-url-template =  "https://github.com/Quaternijkon/ustc_course/edit/main/{path}"
 
