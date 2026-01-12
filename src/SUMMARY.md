@@ -2,7 +2,7 @@
 
 
 [Introduction](Introduction.md)
-[README](Introduction.md)
+[README](../README.md)
 
 # 研究生课程
 
