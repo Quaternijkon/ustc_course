@@ -42,6 +42,10 @@ jobs:
           url1="https://github.com/lzanini/mdbook-katex/releases/download/0.10.0-alpha-binaries/mdbook-katex-v0.10.0-alpha-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url1 | tar -xz --directory=./mdbook
 
+          # [preprocessor.gitinfo]
+          url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux.tar.gz"
+          curl -sSL $url2 | tar -xz --directory=./mdbook
+
           # [preprocessor.admonish]
           # tag2="v1.19.0"
           # url2="https://github.com/tommilligan/mdbook-admonish/releases/download/${tag2}/mdbook-admonish-${tag2}-x86_64-unknown-linux-gnu.tar.gz"
@@ -69,9 +73,9 @@ jobs:
           # curl -sSL $url6 | tar -xz --directory=./mdbook
 
           # mdbook-embedify
-          url7="https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip"
-          curl -sSL "$url7" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
-          mv ./mdbook/mdbook-embedify-*/mdbook-embedify ./mdbook/mdbook-embedify
+          # url7="https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip"
+          # curl -sSL "$url7" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
+          # mv ./mdbook/mdbook-embedify-*/mdbook-embedify ./mdbook/mdbook-embedify
 
           # mdbook-suiji
           # url8="https://github.com/Quaternijkon/mdbook-suiji/releases/download/0.1.1/mdbook-suiji-x86_64-unknown-linux-gnu.tar.gz"
