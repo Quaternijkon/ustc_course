@@ -25,35 +25,15 @@ jobs:
         run: |
           mkdir mdbook
 
-          # ==========================================
-          # 1. mdbook 核心 (必须保留)
-          # ==========================================
           tag="v0.5.2"
           url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url | tar -xz --directory=./mdbook
-
-          # ==========================================
-          # 2. 插件列表 (根据 book.toml 按需解开注释)
-          # ==========================================
 
           # [preprocessor.katex]
           tag1="0.10.0-alpha-binaries"
           # url1="https://github.com/lzanini/mdbook-katex/releases/download/${tag1}-binaries/mdbook-katex-v${tag1}-x86_64-unknown-linux-gnu.tar.gz"
           url1="https://github.com/lzanini/mdbook-katex/releases/download/0.10.0-alpha-binaries/mdbook-katex-v0.10.0-alpha-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url1 | tar -xz --directory=./mdbook
-
-          # # [preprocessor.gitinfo]
-          # url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux.tar.gz"
-          # # 1. 下载并解压
-          # curl -sSL "$url2" | tar -xz --directory=./mdbook
-          # # 2. 赋予执行权限 (非常重要)
-          # mv ./mdbook/mdbook-gitinfo-linux ./mdbook/mdbook-gitinfo
-          # chmod +x ./mdbook/mdbook-gitinfo
-
-          # [preprocessor.admonish]
-          # tag2="v1.19.0"
-          # url2="https://github.com/tommilligan/mdbook-admonish/releases/download/${tag2}/mdbook-admonish-${tag2}-x86_64-unknown-linux-gnu.tar.gz"
-          # curl -sSL $url2 | tar -xz --directory=./mdbook
 
           # mdbook-reading-time
           url3="https://github.com/Quaternijkon/release-package/releases/download/mdbook/mdbook-reading-time-x86_64-unknown-linux-gnu.tar.gz"
@@ -62,11 +42,6 @@ jobs:
           # [preprocessor.toc]
           url9="https://github.com/badboy/mdbook-toc/releases/download/0.15.2/mdbook-toc-0.15.2-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url9 | tar -xz --directory=./mdbook
-
-          # # mdbook-typst-math
-          # url10="https://github.com/duskmoon314/mdbook-typst-math/releases/download/v0.2.0/mdbook-typst-math-x86_64-unknown-linux-gnu.gz"
-          # curl -sSL $url10 | gunzip -c > ./mdbook/mdbook-typst-math
-          # chmod a+x ./mdbook/mdbook-typst-math
 
           # mdbook-alerts (旧版)
           # tag4="v0.7.0"
@@ -80,23 +55,10 @@ jobs:
           # curl -sSL "$url5" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
           # mv ./mdbook/mdbook-repl-*/mdbook-repl ./mdbook/mdbook-repl
 
-          # [preprocessor.mermaid]
-          # tag6="v0.14.1"
-          # url6="https://github.com/badboy/mdbook-mermaid/releases/download/${tag6}/mdbook-mermaid-${tag6}-x86_64-unknown-linux-gnu.tar.gz"
-          # curl -sSL $url6 | tar -xz --directory=./mdbook
-
-          # mdbook-embedify
-          # url7="https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip"
-          # curl -sSL "$url7" -o temp.zip && unzip temp.zip -d ./mdbook && rm temp.zip
-          # mv ./mdbook/mdbook-embedify-*/mdbook-embedify ./mdbook/mdbook-embedify
-
           # mdbook-suiji
           # url8="https://github.com/Quaternijkon/mdbook-suiji/releases/download/0.1.1/mdbook-suiji-x86_64-unknown-linux-gnu.tar.gz"
           # curl -sSL $url8 | tar -xz --directory=./mdbook
 
-          # ==========================================
-          # 3. 环境配置
-          # ==========================================
           ls ./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
 
