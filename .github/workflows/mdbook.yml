@@ -42,13 +42,13 @@ jobs:
           url1="https://github.com/lzanini/mdbook-katex/releases/download/0.10.0-alpha-binaries/mdbook-katex-v0.10.0-alpha-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url1 | tar -xz --directory=./mdbook
 
-          # [preprocessor.gitinfo]
-          url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux.tar.gz"
-          # 1. 下载并解压
-          curl -sSL "$url2" | tar -xz --directory=./mdbook
-          # 2. 赋予执行权限 (非常重要)
-          mv ./mdbook/mdbook-gitinfo-linux ./mdbook/mdbook-gitinfo
-          chmod +x ./mdbook/mdbook-gitinfo
+          # # [preprocessor.gitinfo]
+          # url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux.tar.gz"
+          # # 1. 下载并解压
+          # curl -sSL "$url2" | tar -xz --directory=./mdbook
+          # # 2. 赋予执行权限 (非常重要)
+          # mv ./mdbook/mdbook-gitinfo-linux ./mdbook/mdbook-gitinfo
+          # chmod +x ./mdbook/mdbook-gitinfo
 
           # [preprocessor.admonish]
           # tag2="v1.19.0"
@@ -56,8 +56,8 @@ jobs:
           # curl -sSL $url2 | tar -xz --directory=./mdbook
 
           # mdbook-reading-time
-          # url3="https://github.com/Quaternijkon/mdbook-reading-time/releases/download/1.1.2/mdbook-reading-time-x86_64-unknown-linux-gnu.tar.gz"
-          # curl -sSL $url3 | tar -xz --directory=./mdbook
+          url3="https://github.com/Quaternijkon/release-package/releases/download/mdbook/mdbook-reading-time-x86_64-unknown-linux-gnu.tar.gz"
+          curl -sSL $url3 | tar -xz --directory=./mdbook
 
           # mdbook-alerts (旧版)
           # tag4="v0.7.0"
