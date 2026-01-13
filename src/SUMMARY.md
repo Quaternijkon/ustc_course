@@ -3,6 +3,7 @@
 
 
 [README](./README.md)
+[CHANGELOG](CHANGELOG.md)
 
 # 研究生课程
 

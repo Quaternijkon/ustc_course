@@ -4,6 +4,8 @@ authors = ["Quaternijkon"]
 language = "zh-CN"
 
 [output.html]
+additional-css = ["./additional/whichlang.css"]
+additional-js = ["./additional/whichlang.js"]
 git-repository-url = "https://github.com/Quaternijkon/ustc_course"
 edit-url-template =  "https://github.com/Quaternijkon/ustc_course/edit/main/{path}"
 
