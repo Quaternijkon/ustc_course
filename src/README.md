@@ -2,8 +2,13 @@
 
 原先依托于typst渲染的仓库不再维护，转用在线网站的形式，欢迎提交PR为仓库完善做出贡献！
 
-# 收录课程
+# 已收录课程
 
 - 研究生课程
   - 计算机科学与技术
+	- COMP6001P算法设计与分析
     - COMP6103P高级计算机网络
+
+提交方式：
+- [Email](mailto:Quaternijkon@mail.ustc.edu.cn)
+- [✅pull requests](https://github.com/Quaternijkon/ustc_course/pulls)
