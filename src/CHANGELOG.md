@@ -3,6 +3,8 @@
 ## 2026-01-13
 
 - #feat integrate [whichlang](https://github.com/phoenixr-codes/mdbook-whichlang)
+- #feat integrate reading-time
+- #feat integrate toc
 
 ## 2026-01-12
 

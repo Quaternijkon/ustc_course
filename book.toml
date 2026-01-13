@@ -16,7 +16,6 @@ level = 0
 [preprocessor.katex]
 after = ["links"]
 
-
 [preprocessor.reading-time]
 words-per-minute = 160
 
@@ -24,5 +23,3 @@ words-per-minute = 160
 command = "mdbook-toc"
 renderer = ["html"]
 max-level = 4
-
-[preprocessor.typst-math]
