@@ -43,8 +43,10 @@ jobs:
           curl -sSL $url1 | tar -xz --directory=./mdbook
 
           # [preprocessor.gitinfo]
-          url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux.tar.gz"
-          curl -sSL $url2 | tar -xz --directory=./mdbook
+          url2="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v1.2.0/mdbook-gitinfo-linux"
+          # 注意：必须重命名为 mdbook-gitinfo，不能带 -linux 后缀
+          curl -sSL "$url2" -o ./mdbook/mdbook-gitinfo
+          chmod +x ./mdbook/mdbook-gitinfo
 
           # [preprocessor.admonish]
           # tag2="v1.19.0"
