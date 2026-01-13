@@ -23,3 +23,4 @@
 	- [COMP6201P并行程序设计](计算机科学与技术/COMP6201P并行程序设计/_COMP6201P并行程序设计.md)
 
 [Contributions](Contributions.md)
+[Test](Test.md)

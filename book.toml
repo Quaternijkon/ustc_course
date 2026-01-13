@@ -23,3 +23,6 @@ words-per-minute = 160
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+max-level = 4
+
+[preprocessor.typst-math]
