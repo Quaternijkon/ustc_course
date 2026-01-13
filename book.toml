@@ -17,4 +17,5 @@ level = 0
 after = ["links"]
 
 [preprocessor.embedify]
-scroll-to-top.enable = true
+footer.enable = true
+footer.message = "Copyright © 2025 • Created with ❤️ by [MR-Addict](https://github.com/MR-Addict)"
