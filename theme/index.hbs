@@ -253,6 +253,16 @@
         			crossorigin="anonymous"
         			async>
 			</script>
+			<script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
+			<script>
+    				// 对 main 区域内的所有 img 标签启用放大功能
+    				// 排除掉可能存在的链接图标或 emoji
+    				mediumZoom('main img:not(.icon)', {
+        			margin: 24,
+        			background: 'var(--bg)', // 自动适配 mdBook 背景色
+        			scrollOffset: 0,
+    				});
+			</script>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
