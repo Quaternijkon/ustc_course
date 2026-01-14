@@ -1,3 +1,7 @@
+
+> 转载自[liuzengh/combinatorial-mathematics](https://github.com/liuzengh/combinatorial-mathematics)
+
+
 #### 1. 计算(123)(234)(5)(14)(23),并指出它所在的共轭类。
 (13)(24)(5), $S_5$ 中型为$1^12^2$的置换共有$\frac{5!}{1!2!1^12^2} = 15$,
 ```
