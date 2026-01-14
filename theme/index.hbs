@@ -77,6 +77,26 @@
         		background-color: var(--sidebar-active);
         		width: 0%;
     		}
+		#back-to-top {
+        		display: none;
+        		position: fixed;
+        		bottom: 20px;
+        		right: 20px;
+        		z-index: 99;
+        		font-size: 18px;
+        		border: none;
+        		outline: none;
+        		background-color: var(--sidebar-bg);
+        		color: var(--fg);
+        		cursor: pointer;
+        		padding: 10px 15px;
+        		border-radius: 4px;
+        		opacity: 0.8;
+        		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    		}
+    		#back-to-top:hover {
+        		background-color: var(--sidebar-active);
+    		}
 	</style>
     </head>
     <body>
@@ -236,6 +256,8 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         {{{ content }}}
+
+			<button id="back-to-top" title="Go to top">{{fa "solid" "arrow-up"}}</button>
 
 			<script src="https://giscus.app/client.js"
 			        data-repo="Quaternijkon/ustc_course"
@@ -417,6 +439,20 @@
         		let scrolled = (winScroll / height) * 100;
         		document.getElementById("myBar").style.width = scrolled + "%";
     		};
+	</script>
+	<script>
+    		let mybutton = document.getElementById("back-to-top");
+    		window.addEventListener("scroll", function() {
+        		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            		mybutton.style.display = "block";
+        		} else {
+            		mybutton.style.display = "none";
+        		}
+    		});
+    		mybutton.addEventListener("click", function() {
+        		document.body.scrollTop = 0;
+        		document.documentElement.scrollTop = 0;
+    		});
 	</script>
     </body>
 </html>
