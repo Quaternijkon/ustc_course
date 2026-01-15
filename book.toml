@@ -19,7 +19,7 @@ header = """
 {% contributors %}
 <!-- toc -->
 """
-footer = ""
+footer = "https://file.quaternijkon.online/2026/01/{path}.md"
 
 [preprocessor.katex]
 after = ["links"]
