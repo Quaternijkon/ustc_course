@@ -13,6 +13,10 @@ edit-url-template =  "https://github.com/Quaternijkon/ustc_course/edit/main/{pat
 enable = true
 level = 0
 
+[preprocessor.header-footer]
+header = "<!-- toc -->"
+footer = "{% Contributor %}<br>"
+
 [preprocessor.katex]
 after = ["links"]
 
@@ -43,6 +47,4 @@ branch = "main"
 hyperlink = true
 contributors = true
 
-[preprocessor.header-footer]
-header = "<!-- toc -->"
-footer = "{% Contributor %}"
+
