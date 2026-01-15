@@ -45,7 +45,9 @@ jobs:
 
           # mdbook-gitinfo
           url6="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v2.0.0/mdbook-gitinfo-linux.tar.gz"
+          #解压并重命名为mdbook-gitinfo
           curl -sSL $url6 | tar -xz --directory=./mdbook
+          mv ./mdbook/mdbook-gitinfo-linux ./mdbook/mdbook-gitinfo
 
           # mdbook-alerts (旧版)
           # tag4="v0.7.0"
