@@ -14,9 +14,9 @@ enable = true
 level = 0
 
 [preprocessor.header-footer]
-after = ["gitinfo"]
-header = "{% Contributor %}"
-footer = "{% Contributor %}"
+before = ["gitinfo"]
+header = "{% contributors %}"
+footer = "{% contributors %}"
 
 [preprocessor.katex]
 after = ["links"]
