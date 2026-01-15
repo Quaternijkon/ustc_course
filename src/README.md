@@ -7,7 +7,9 @@
 - 研究生课程
   - 计算机科学与技术
 	- COMP6001P算法设计与分析
+	- COMP6002P组合数学
     - COMP6103P高级计算机网络
+    - COMP6108P高级数据库系统
 
 提交方式：
 - [Email](mailto:Quaternijkon@mail.ustc.edu.cn)

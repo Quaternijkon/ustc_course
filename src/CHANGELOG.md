@@ -1,7 +1,6 @@
 # Roadmap
 
 - [ ] Download page source independently
-- [ ] Automatically insert header and footer templates.
 
 # Changelog
 
