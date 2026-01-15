@@ -9,6 +9,8 @@
 
 - #plugin integrate [**gitinfo**](https://github.com/CompEng0001/mdbook-gitinfo)  
   *show git info*
+- #ui add **tag style**  
+  *enhance tag visibility*
 
 ## 2026-01-14
 
