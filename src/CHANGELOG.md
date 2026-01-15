@@ -1,17 +1,22 @@
-# Roadmap
+## Roadmap
 
-- [ ] Download page source independently
+- [x] Download page source independently
+- [x] insert header and footer
 
-# Changelog
+## Changelog
+
+### 
 
 - #plugin integrate [**gitinfo**](https://github.com/CompEng0001/mdbook-gitinfo)  
   *show git info*
 - #ui add **tag style**  
   *enhance tag visibility*
 - #ui insert **header and footer** (as markdown)   
-  page template config
+ * page template config*
+- #feat **download** page source file  
+  *markdown source file without decoration*
 
-## 2026-01-14
+### 2026-01-14
 
 - #ui add **progress bar**  
   *reading progress bar at the top*
@@ -19,7 +24,7 @@
   *button scroll back to the top*
 - #ux add **image zooming**  
   *click-to-zoom for images*
-## 2026-01-13
+### 2026-01-13
 
 - #ui integrate [**whichlang**](https://github.com/phoenixr-codes/mdbook-whichlang)  
   *enhance code display*
@@ -28,7 +33,7 @@
 - #plugin integrate [**toc**](https://github.com/badboy/mdbook-toc)  
  * inline outline*
 
-## 2026-01-12
+### 2026-01-12
 
 - #integration integrate [**giscus**](https://giscus.app/zh-CN)  
  * github-base comments*
