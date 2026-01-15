@@ -4,7 +4,7 @@ authors = ["Quaternijkon"]
 language = "zh-CN"
 
 [output.html]
-additional-css = ["./additional/whichlang.css"]
+additional-css = ["./additional/whichlang.css","./additional/gitinfo.css"]
 additional-js = ["./additional/whichlang.js"]
 git-repository-url = "https://github.com/Quaternijkon/ustc_course"
 edit-url-template =  "https://github.com/Quaternijkon/ustc_course/edit/main/{path}"
@@ -26,3 +26,19 @@ max-level = 4
 
 [preprocessor.gitinfo]
 enable = true
+header = true
+footer = true
+message.header = "Last updated: <em>{{date}}</em>"
+message.footer = "branch: {{branch}} {{sep}} commit: {{hash}} {{sep}} tag: {{tag}}"
+align.header = "center"
+align.footer = "center"
+margin.header.top = "2em"
+margin.header.bottom = "2em"
+margin.footer = ["2em", "0", "0", "0"]
+font-size = "0.8em"
+separator = "||"
+date-format = "%A %d %B %Y"
+time-format = "@ %H:%M:%S"
+branch = "main"
+hyperlink = true
+contributors = true
