@@ -1,109 +1,117 @@
 <!DOCTYPE HTML>
 <html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
-    <head>
-        {{!-- <meta property="og:type" content="website">
-        <meta property="og:title" content="{{ title }}">
-        <meta property="og:description" content="{{ description }}">
-        <meta property="og:image" content="https://你的域名/封面图.png"> <meta name="twitter:card" content="summary_large_image"> --}}
-        <!-- Book generated using mdBook -->
-        <meta charset="UTF-8">
-        <title>{{ title }}</title>
-        {{#if is_print }}
-        <meta name="robots" content="noindex">
-        {{/if}}
-        {{#if base_url}}
-        <base href="{{ base_url }}">
-        {{/if}}
+
+<head>
+    {{!--
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="https://你的域名/封面图.png">
+    <meta name="twitter:card" content="summary_large_image"> --}}
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    {{#if is_print }}
+    <meta name="robots" content="noindex">
+    {{/if}}
+    {{#if base_url}}
+    <base href="{{ base_url }}">
+    {{/if}}
 
 
-        <!-- Custom HTML head -->
-        {{> head}}
+    <!-- Custom HTML head -->
+    {{> head}}
 
-        <meta name="description" content="{{ description }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
 
-        {{#if favicon_svg}}
-        <link rel="icon" href="{{ resource "favicon.svg" }}">
-        {{/if}}
-        {{#if favicon_png}}
-        <link rel="shortcut icon" href="{{ resource "favicon.png" }}">
-        {{/if}}
-        <link rel="stylesheet" href="{{ resource "css/variables.css" }}">
-        <link rel="stylesheet" href="{{ resource "css/general.css" }}">
-        <link rel="stylesheet" href="{{ resource "css/chrome.css" }}">
-        {{#if print_enable}}
-        <link rel="stylesheet" href="{{ resource "css/print.css" }}" media="print">
-        {{/if}}
+    {{#if favicon_svg}}
+    <link rel="icon" href="{{ resource " favicon.svg" }}">
+    {{/if}}
+    {{#if favicon_png}}
+    <link rel="shortcut icon" href="{{ resource " favicon.png" }}">
+    {{/if}}
+    <link rel="stylesheet" href="{{ resource " css/variables.css" }}">
+    <link rel="stylesheet" href="{{ resource " css/general.css" }}">
+    <link rel="stylesheet" href="{{ resource " css/chrome.css" }}">
+    {{#if print_enable}}
+    <link rel="stylesheet" href="{{ resource " css/print.css" }}" media="print">
+    {{/if}}
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="{{ resource "fonts/fonts.css" }}">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{{ resource " fonts/fonts.css" }}">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="{{ resource "highlight.css" }}">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="{{ resource "tomorrow-night.css" }}">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="{{ resource "ayu-highlight.css" }}">
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" id="mdbook-highlight-css" href="{{ resource " highlight.css" }}">
+    <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="{{ resource " tomorrow-night.css" }}">
+    <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="{{ resource " ayu-highlight.css" }}">
 
-        <!-- Custom theme stylesheets -->
-        {{#each additional_css}}
-        <link rel="stylesheet" href="{{ resource this }}">
-        {{/each}}
+    <!-- Custom theme stylesheets -->
+    {{#each additional_css}}
+    <link rel="stylesheet" href="{{ resource this }}">
+    {{/each}}
 
-        {{#if mathjax_support}}
-        <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        {{/if}}
+    {{#if mathjax_support}}
+    <!-- MathJax -->
+    <script async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    {{/if}}
 
-        <!-- Provide site root and default themes to javascript -->
-        <script>
-            const path_to_root = "{{ path_to_root }}";
-            const default_light_theme = "{{ default_theme }}";
-            const default_dark_theme = "{{ preferred_dark_theme }}";
-        {{#if search_js}}
-            window.path_to_searchindex_js = "{{ resource "searchindex.js" }}";
-        {{/if}}
-        </script>
-        <!-- Start loading toc.js asap -->
-        <script src="{{ resource "toc.js" }}"></script>
-	<style>
-    		/* 进度条容器 */
-    		.progress-container {
-        		position: fixed;
-        		top: 0;
-        		z-index: 1000;
-        		width: 100%;
-        		height: 3px;
-        		background-color: transparent;
-    		}
-    		/* 进度条本身，颜色使用了 mdBook 自带的变量，自动适配主题 */
-    		.progress-bar {
-        		height: 3px;
-        		background-color: var(--sidebar-active);
-        		width: 0%;
-    		}
-		#back-to-top {
-        		display: none;
-        		position: fixed;
-        		bottom: 20px;
-        		right: 20px;
-        		z-index: 99;
-        		font-size: 18px;
-        		border: none;
-        		outline: none;
-        		background-color: var(--sidebar-bg);
-        		color: var(--fg);
-        		cursor: pointer;
-        		padding: 10px 15px;
-        		border-radius: 4px;
-        		opacity: 0.8;
-        		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    		}
-    		#back-to-top:hover {
-        		background-color: var(--sidebar-active);
-    		}
-	</style>
-    </head>
-    <body>
+    <!-- Provide site root and default themes to javascript -->
+    <script>
+        const path_to_root = "{{ path_to_root }}";
+        const default_light_theme = "{{ default_theme }}";
+        const default_dark_theme = "{{ preferred_dark_theme }}";
+        { { #if search_js } }
+        window.path_to_searchindex_js = "{{ resource "searchindex.js" }}";
+        { {/if } }
+    </script>
+    <!-- Start loading toc.js asap -->
+    <script src="{{ resource " toc.js" }}"></script>
+    <style>
+        /* 进度条容器 */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+        }
+
+        /* 进度条本身，颜色使用了 mdBook 自带的变量，自动适配主题 */
+        .progress-bar {
+            height: 3px;
+            background-color: var(--sidebar-active);
+            width: 0%;
+        }
+
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: var(--sidebar-bg);
+            color: var(--fg);
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            opacity: 0.8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #back-to-top:hover {
+            background-color: var(--sidebar-active);
+        }
+    </style>
+</head>
+
+<body>
     <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
     </div>
@@ -141,7 +149,7 @@
         <script>
             const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
             let theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
             html.classList.remove('{{ default_theme }}')
@@ -156,7 +164,7 @@
             let sidebar = null;
             const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
@@ -187,22 +195,34 @@
                 <div id="mdbook-menu-bar-hover-placeholder"></div>
                 <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="mdbook-sidebar">
                             {{fa "solid" "bars"}}
                         </label>
-                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mdbook-theme-list">
                             {{fa "solid" "paintbrush"}}
                         </button>
                         <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme"
+                                    id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button>
+                            </li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button>
+                            </li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button>
+                            </li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button>
+                            </li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button>
+                            </li>
                         </ul>
                         {{#if search_enabled}}
-                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s"
+                            aria-controls="mdbook-searchbar">
                             {{fa "solid" "magnifying-glass"}}
                         </button>
                         {{/if}}
@@ -222,7 +242,8 @@
                         </a>
                         {{/if}}
                         {{#if git_repository_edit_url}}
-                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit"
+                            rel="edit">
                             {{fa "solid" "pencil" "git-edit-button"}}
                         </a>
                         {{/if}}
@@ -234,7 +255,9 @@
                 <div id="mdbook-search-wrapper" class="hidden">
                     <form id="mdbook-searchbar-outer" class="searchbar-outer">
                         <div class="search-wrapper">
-                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <input type="search" id="mdbook-searchbar" name="searchbar"
+                                placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer"
+                                aria-describedby="searchresults-header">
                             <div class="spinner-wrapper">
                                 {{fa "solid" "spinner" "fa-spin"}}
                             </div>
@@ -252,65 +275,59 @@
                 <script>
                     document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function (link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
                 <div id="mdbook-content" class="content">
                     <main>
+                        {{> contributor}}
+
                         {{{ content }}}
 
-			<button id="back-to-top" title="Go to top">{{fa "solid" "arrow-up"}}</button>
+                        <button id="back-to-top" title="Go to top">{{fa "solid" "arrow-up"}}</button>
 
-			<script src="https://giscus.app/client.js"
-			        data-repo="Quaternijkon/ustc_course"
-			        data-repo-id="R_kgDOQ4LIUg"
-        			data-category="Comments"
-        			data-category-id="DIC_kwDOQ4LIUs4C027k"
-        			data-mapping="pathname"
-        			data-strict="1"
-        			data-reactions-enabled="1"
-        			data-emit-metadata="1"
-        			data-input-position="top"
-        			data-theme="preferred_color_scheme"
-        			data-lang="zh-CN"
-        			data-loading="lazy"
-        			crossorigin="anonymous"
-        			async>
-			</script>
-			<script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
-			<script>
-    				// 对 main 区域内的所有 img 标签启用放大功能
-    				// 排除掉可能存在的链接图标或 emoji
-    				mediumZoom('main img:not(.icon)', {
-        			margin: 24,
-        			background: 'var(--bg)', // 自动适配 mdBook 背景色
-        			scrollOffset: 0,
-    				});
-			</script>
+                        <script src="https://giscus.app/client.js" data-repo="Quaternijkon/ustc_course"
+                            data-repo-id="R_kgDOQ4LIUg" data-category="Comments" data-category-id="DIC_kwDOQ4LIUs4C027k"
+                            data-mapping="pathname" data-strict="1" data-reactions-enabled="1" data-emit-metadata="1"
+                            data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN"
+                            data-loading="lazy" crossorigin="anonymous" async>
+                            </script>
+                        <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
+                        <script>
+                            // 对 main 区域内的所有 img 标签启用放大功能
+                            // 排除掉可能存在的链接图标或 emoji
+                            mediumZoom('main img:not(.icon)', {
+                                margin: 24,
+                                background: 'var(--bg)', // 自动适配 mdBook 背景色
+                                scrollOffset: 0,
+                            });
+                        </script>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         {{#if previous}}
-                            <a rel="prev" href="{{ path_to_root }}{{previous.link}}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                {{#if (eq ../text_direction "rtl")}}
-                                {{fa "solid" "angle-right"}}
-                                {{else}}
-                                {{fa "solid" "angle-left"}}
-                                {{/if}}
-                            </a>
+                        <a rel="prev" href="{{ path_to_root }}{{previous.link}}" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            {{#if (eq ../text_direction "rtl")}}
+                            {{fa "solid" "angle-right"}}
+                            {{else}}
+                            {{fa "solid" "angle-left"}}
+                            {{/if}}
+                        </a>
                         {{/if}}
 
                         {{#if next}}
-                            <a rel="next prefetch" href="{{ path_to_root }}{{next.link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                {{#if (eq ../text_direction "rtl")}}
-                                {{fa "solid" "angle-left"}}
-                                {{else}}
-                                {{fa "solid" "angle-right"}}
-                                {{/if}}
-                            </a>
+                        <a rel="next prefetch" href="{{ path_to_root }}{{next.link}}" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            {{#if (eq ../text_direction "rtl")}}
+                            {{fa "solid" "angle-left"}}
+                            {{else}}
+                            {{fa "solid" "angle-right"}}
+                            {{/if}}
+                        </a>
                         {{/if}}
 
                         <div style="clear: both"></div>
@@ -320,23 +337,25 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 {{#if previous}}
-                    <a rel="prev" href="{{ path_to_root }}{{previous.link}}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        {{#if (eq ../text_direction "rtl")}}
-                        {{fa "solid" "angle-right"}}
-                        {{else}}
-                        {{fa "solid" "angle-left"}}
-                        {{/if}}
-                    </a>
+                <a rel="prev" href="{{ path_to_root }}{{previous.link}}" class="nav-chapters previous"
+                    title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    {{#if (eq ../text_direction "rtl")}}
+                    {{fa "solid" "angle-right"}}
+                    {{else}}
+                    {{fa "solid" "angle-left"}}
+                    {{/if}}
+                </a>
                 {{/if}}
 
                 {{#if next}}
-                    <a rel="next prefetch" href="{{ path_to_root }}{{next.link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        {{#if (eq text_direction "rtl")}}
-                        {{fa "solid" "angle-left"}}
-                        {{else}}
-                        {{fa "solid" "angle-right"}}
-                        {{/if}}
-                    </a>
+                <a rel="next prefetch" href="{{ path_to_root }}{{next.link}}" class="nav-chapters next"
+                    title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    {{#if (eq text_direction "rtl")}}
+                    {{fa "solid" "angle-left"}}
+                    {{else}}
+                    {{fa "solid" "angle-right"}}
+                    {{/if}}
+                </a>
                 {{/if}}
             </nav>
 
@@ -361,7 +380,7 @@
                 }
             };
 
-            window.onbeforeunload = function() {
+            window.onbeforeunload = function () {
                 socket.close();
             }
         </script>
@@ -380,22 +399,22 @@
         {{/if}}
 
         {{#if playground_js}}
-        <script src="{{ resource "ace.js" }}"></script>
-        <script src="{{ resource "mode-rust.js" }}"></script>
-        <script src="{{ resource "editor.js" }}"></script>
-        <script src="{{ resource "theme-dawn.js" }}"></script>
-        <script src="{{ resource "theme-tomorrow_night.js" }}"></script>
+        <script src="{{ resource " ace.js" }}"></script>
+        <script src="{{ resource " mode-rust.js" }}"></script>
+        <script src="{{ resource " editor.js" }}"></script>
+        <script src="{{ resource " theme-dawn.js" }}"></script>
+        <script src="{{ resource " theme-tomorrow_night.js" }}"></script>
         {{/if}}
 
         {{#if search_js}}
-        <script src="{{ resource "elasticlunr.min.js" }}"></script>
-        <script src="{{ resource "mark.min.js" }}"></script>
-        <script src="{{ resource "searcher.js" }}"></script>
+        <script src="{{ resource " elasticlunr.min.js" }}"></script>
+        <script src="{{ resource " mark.min.js" }}"></script>
+        <script src="{{ resource " searcher.js" }}"></script>
         {{/if}}
 
-        <script src="{{ resource "clipboard.min.js" }}"></script>
-        <script src="{{ resource "highlight.js" }}"></script>
-        <script src="{{ resource "book.js" }}"></script>
+        <script src="{{ resource " clipboard.min.js" }}"></script>
+        <script src="{{ resource " highlight.js" }}"></script>
+        <script src="{{ resource " book.js" }}"></script>
 
         <!-- Custom JS scripts -->
         {{#each additional_js}}
@@ -405,58 +424,60 @@
         {{#if is_print}}
         {{#if mathjax_support}}
         <script>
-        window.addEventListener('load', function() {
-            MathJax.Hub.Register.StartupHook('End', function() {
-                window.setTimeout(window.print, 100);
+            window.addEventListener('load', function () {
+                MathJax.Hub.Register.StartupHook('End', function () {
+                    window.setTimeout(window.print, 100);
+                });
             });
-        });
         </script>
         {{else}}
         <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
+            window.addEventListener('load', function () {
+                window.setTimeout(window.print, 100);
+            });
         </script>
         {{/if}}
         {{/if}}
 
         {{#if fragment_map}}
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const fragmentMap =
-                    {{{fragment_map}}}
+                    {{{ fragment_map }
+            }}
                 ;
-                const target = fragmentMap[window.location.hash];
-                if (target) {
-                    let url = new URL(target, window.location.href);
-                    window.location.replace(url.href);
-                }
+            const target = fragmentMap[window.location.hash];
+            if (target) {
+                let url = new URL(target, window.location.href);
+                window.location.replace(url.href);
+            }
             });
         </script>
         {{/if}}
 
     </div>
-    	<script>
-    		window.onscroll = function() {
-        		let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        		let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        		let scrolled = (winScroll / height) * 100;
-        		document.getElementById("myBar").style.width = scrolled + "%";
-    		};
-	</script>
-	<script>
-    		let mybutton = document.getElementById("back-to-top");
-    		window.addEventListener("scroll", function() {
-        		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            		mybutton.style.display = "block";
-        		} else {
-            		mybutton.style.display = "none";
-        		}
-    		});
-    		mybutton.addEventListener("click", function() {
-        		document.body.scrollTop = 0;
-        		document.documentElement.scrollTop = 0;
-    		});
-	</script>
-    </body>
+    <script>
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        };
+    </script>
+    <script>
+        let mybutton = document.getElementById("back-to-top");
+        window.addEventListener("scroll", function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        });
+        mybutton.addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+
 </html>
