@@ -14,8 +14,9 @@ enable = true
 level = 0
 
 [preprocessor.header-footer]
-header = "<!-- toc -->"
-footer = "{% Contributor %}<br>"
+after = ["gitinfo"]
+header = "{% Contributor %}"
+footer = "{% Contributor %}"
 
 [preprocessor.katex]
 after = ["links"]
