@@ -50,6 +50,11 @@ jobs:
           curl -sSL $url6 | tar -xz --directory=./mdbook
           mv ./mdbook/mdbook-gitinfo-linux ./mdbook/mdbook-gitinfo
 
+          # mdbook-header-footer
+          url7="https://github.com/Quaternijkon/mdbook-header-footer/releases/download/new/mdbook-header-footer-x86_64-unknown-linux-gnu.tar.gz"
+          curl -sSL $url7 | tar -xz --directory=./mdbook
+
+
           # mdbook-alerts (旧版)
           # tag4="v0.7.0"
           # url4="https://github.com/lambdalisue/rs-mdbook-alerts/releases/download/${tag4}/mdbook-alerts-x86_64-unknown-linux-gnu"

@@ -42,3 +42,7 @@ time-format = "@ %H:%M:%S"
 branch = "main"
 hyperlink = true
 contributors = true
+
+[preprocessor.header-footer]
+header = "<!-- toc -->"
+footer = "{% Contributor %}"
