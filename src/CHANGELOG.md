@@ -34,3 +34,4 @@
  * github-base comments*
 - #plugin integrate [**katex**](https://github.com/lzanini/mdbook-katex)  
   *enable latex display*
+{% contributors %}
