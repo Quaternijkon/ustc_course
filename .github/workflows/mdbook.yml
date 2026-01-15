@@ -43,6 +43,10 @@ jobs:
           url9="https://github.com/badboy/mdbook-toc/releases/download/0.15.2/mdbook-toc-0.15.2-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url9 | tar -xz --directory=./mdbook
 
+          # mdbook-gitinfo
+          url6="https://github.com/CompEng0001/mdbook-gitinfo/releases/download/v2.0.0/mdbook-gitinfo-linux.tar.gz"
+          curl -sSL $url6 | tar -xz --directory=./mdbook
+
           # mdbook-alerts (旧版)
           # tag4="v0.7.0"
           # url4="https://github.com/lambdalisue/rs-mdbook-alerts/releases/download/${tag4}/mdbook-alerts-x86_64-unknown-linux-gnu"
