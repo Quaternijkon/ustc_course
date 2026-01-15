@@ -1,0 +1,20 @@
+/* 定义标签的样式 */
+.md-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0 2px;
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    color: #1565c0;            /* 深蓝色文字 */
+    border-radius: 12px;       /* 胶囊形状 */
+    font-size: 0.85em;         /* 稍微缩小字体 */
+    font-family: monospace;    /* 可选：使用等宽字体 */
+    border: 1px solid #bbdefb;
+    vertical-align: middle;
+}
+
+/* 黑暗模式适配 (可选) */
+.html.coal .md-tag, .html.navy .md-tag, .html.ayu .md-tag {
+    background-color: #333;
+    color: #ffcc00;
+    border-color: #555;
+}
