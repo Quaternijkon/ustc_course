@@ -5,7 +5,7 @@
 
 ## Changelog
 
-### 
+### 2026-01-15
 
 - #plugin integrate [**gitinfo**](https://github.com/CompEng0001/mdbook-gitinfo)  
   *show git info*
