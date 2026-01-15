@@ -9,6 +9,8 @@
   *show git info*
 - #ui add **tag style**  
   *enhance tag visibility*
+- #ui insert **header and footer** (as markdown)   
+  page template config
 
 ## 2026-01-14
 
