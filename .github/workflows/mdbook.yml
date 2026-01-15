@@ -7,6 +7,7 @@ on:
       - src/**
       - .github/workflows/mdbook.yml
       - book.toml
+      - theme/**
   workflow_dispatch:
 
 jobs:
