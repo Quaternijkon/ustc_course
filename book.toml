@@ -15,8 +15,8 @@ level = 0
 
 [preprocessor.header-footer]
 before = ["gitinfo"]
-header = "{% contributors %}"
-footer = "{% contributors %}"
+header = "{% contributors %}<br><!-- toc -->"
+footer = ""
 
 [preprocessor.katex]
 after = ["links"]
