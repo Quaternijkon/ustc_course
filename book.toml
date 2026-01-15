@@ -19,7 +19,7 @@ header = """
 {% contributors %}
 <!-- toc -->
 """
-footer = "https://file.quaternijkon.online/2026/01/{path}.md"
+footer = ""
 
 [preprocessor.katex]
 after = ["links"]
@@ -37,7 +37,7 @@ enable = true
 header = true
 footer = true
 message.header = "Last updated: <em>{{date}}</em>"
-message.footer = "branch: {{branch}} {{sep}} commit: {{hash}} {{sep}} tag: {{tag}} {{sep}} {path}"
+message.footer = "branch: {{branch}} {{sep}} commit: {{hash}} {{sep}} tag: {{tag}}"
 align.header = "center"
 align.footer = "center"
 margin.header.top = "2em"
