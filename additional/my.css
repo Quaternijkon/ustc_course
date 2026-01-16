@@ -1,20 +1,50 @@
 /* 定义标签的样式 */
 .md-tag {
-    display: inline-block;
-    padding: 2px 8px;
-    margin: 0 2px;
-    background-color: #e3f2fd; /* 浅蓝色背景 */
-    color: #1565c0;            /* 深蓝色文字 */
-    border-radius: 12px;       /* 胶囊形状 */
-    font-size: 0.85em;         /* 稍微缩小字体 */
-    font-family: monospace;    /* 可选：使用等宽字体 */
-    border: 1px solid #bbdefb;
-    vertical-align: middle;
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 0 2px;
+  background-color: #e3f2fd; /* 浅蓝色背景 */
+  color: #1565c0; /* 深蓝色文字 */
+  border-radius: 12px; /* 胶囊形状 */
+  font-size: 0.85em; /* 稍微缩小字体 */
+  font-family: monospace; /* 可选：使用等宽字体 */
+  border: 1px solid #bbdefb;
+  vertical-align: middle;
 }
 
 /* 黑暗模式适配 (可选) */
-.html.coal .md-tag, .html.navy .md-tag, .html.ayu .md-tag {
-    background-color: #333;
-    color: #ffcc00;
-    border-color: #555;
+.html.coal .md-tag,
+.html.navy .md-tag,
+.html.ayu .md-tag {
+  background-color: #333;
+  color: #ffcc00;
+  border-color: #555;
+}
+
+/* 代码块容器圆角和阴影 */
+pre {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-top: 30px !important; /* 给顶部留出空间放红黄绿点 */
+  border: 1px solid var(--table-border-color);
+}
+
+/* 模拟 Mac 窗口的三个点 */
+pre::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* 红色点，利用 box-shadow 生成黄色和绿色点 */
+  background-color: #ff5f56;
+  box-shadow: 15px 0 0 #ffbd2e, 30px 0 0 #27c93f;
+}
+
+/* 调整代码内容的内边距 */
+pre > code {
+  padding-top: 0 !important;
 }

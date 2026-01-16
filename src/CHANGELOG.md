@@ -11,8 +11,8 @@
   *show git info*
 - #ui add **tag style**  
   *enhance tag visibility*
-- #ui insert **header and footer** (as markdown)   
- * page template config*
+- #ui insert **header and footer** (as markdown)  
+  *page template config*
 - #feat **download** page source file  
   *markdown source file without decoration*
 
@@ -31,11 +31,11 @@
 - #plugin integrate [**reading-time**](https://github.com/pawurb/mdbook-reading-time)  
   *word count*
 - #plugin integrate [**toc**](https://github.com/badboy/mdbook-toc)  
- * inline outline*
+  *inline outline*
 
 ### 2026-01-12
 
 - #integration integrate [**giscus**](https://giscus.app/zh-CN)  
- * github-base comments*
+  *github-base comments*
 - #plugin integrate [**katex**](https://github.com/lzanini/mdbook-katex)  
   *enable latex display*
