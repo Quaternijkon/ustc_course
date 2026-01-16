@@ -48,3 +48,20 @@ pre::before {
 pre > code {
   padding-top: 0 !important;
 }
+
+/* Webkit 浏览器 (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sidebar-fg);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sidebar-active);
+}
